@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  label-master:
+    build: .
+    container_name: aop-label-master
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      # Mapujemy bazę danych, aby była trwała na Twoim dysku
+      - ./aop_production.db:/app/aop_production.db
+      # Mapujemy folder ze zdjęciami ROI (do Shadow Learning)
+      - ./data_test/captures:/app/data_test/captures
+      - ./data/training_data:/app/data/training_data
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

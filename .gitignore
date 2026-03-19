@@ -1,0 +1,29 @@
+# Secrets
+.env
+.env.local
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Database
+*.db
+
+# Logs
+*.log
+debug_log.txt
+
+# OS
+desktop.ini
+.DS_Store
+
+# Data / captures
+data/
+data_test/captures/
+filmy/
+testy_kamery/
+zdj*/
